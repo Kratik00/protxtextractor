@@ -239,7 +239,7 @@ async def restart_handler(_, m):
      os.execl(sys.executable, sys.executable, *sys.argv)
     
 
-@bot.on_message(filters.command(["drm"]))
+@bot.on_message(filters.command(["luci"]))
 async def account_login(bot: Client, m: Message):
     global processing_request
     if m.from_user.id not in auth_users:
