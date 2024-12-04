@@ -517,7 +517,6 @@ async def account_login(bot: Client, m: Message):
     time.sleep(2)
 
 
-   try:
     if failed_links:
         error_file_send = await m.reply_text("**📤 Sending you Failed Downloads List **")
         with open("failed_downloads.txt", "w") as f:
