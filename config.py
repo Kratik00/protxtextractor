@@ -8,7 +8,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
 PASS_DB = int(os.environ.get("PASS_DB", "721"))
 
-OWNER = int(os.environ.get("OWNER", ))
+OWNER = int(os.environ.get("OWNER", "7145429939"))
 
 # UPDATE_GRP = , # bot sat group
 
