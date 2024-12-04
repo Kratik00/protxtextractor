@@ -517,25 +517,28 @@ async def account_login(bot: Client, m: Message):
     time.sleep(2)
 
 
+   try:
     if failed_links:
-     error_file_send = await m.reply_text("**📤 Sending you Failed Downloads List **")
-     with open("failed_downloads.txt", "w") as f:
-        for link in failed_links:
-            f.write(link + "\n")
-    # After writing to the file, send it
-     await m.reply_document(document="failed_downloads.txt", caption=fail_cap)
-     await error_file_send.delete()
-     failed_links.clear()
-     os.remove(f'failed_downloads.txt')
+        error_file_send = await m.reply_text("**📤 Sending you Failed Downloads List **")
+        with open("failed_downloads.txt", "w") as f:
+            for link in failed_links:
+                f.write(link + "\n")
+        
+        await m.reply_document(document="failed_downloads.txt", caption=fail_cap)
+        await error_file_send.delete()
+        failed_links.clear()
+    
+    try:
+        os.remove('failed_downloads.txt')
+    except FileNotFoundError:
+        pass
+    
     await m.reply_text("⚜Done⚜")
     await m.reply_text("**Thanks You By 𝙻𝚄𝙲𝙸𝙵𝙴𝚁😎**")
-    processing_request = False  # Reset the processing flag  
-
-
-
     
-  
-processing_request = False  
-bot.run()
-#  MADE BY LUCIFER
-
+except Exception as e:
+    await m.reply_text(f"An error occurred: {str(e)}")
+    
+finally:
+    processing_request = False
+  bot.run()
