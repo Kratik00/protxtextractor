@@ -319,4 +319,4 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,thumb2):
 
     os.remove(filename)
     os.remove(thumbnail)
-    await reply.delete(Tru
+    await reply.delete(True)
