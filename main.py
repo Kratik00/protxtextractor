@@ -60,7 +60,7 @@ keyboard = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="❣️ GITHUB",
-                url="https://t.me/LP_LUCIFER",
+                url="https://t.me/LP_YAGAMI",
             ),
         ],
         [
@@ -84,7 +84,7 @@ Busy = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="❣️ GITHUB",
-                url="https://t.me/LP_LUCIFER",
+                url="https://t.me/LP_YAGAMI",
             ),
         ],
         [
@@ -140,7 +140,7 @@ async def start_command(bot: Client, message: Message):
         reply_markup=keyboard
     )
 
-@bot.on_message(filters.command('h2t'))
+@bot.on_message(filters.command('admin'))
 async def run_bot(bot: Client, m: Message):
     user_id = m.from_user.id
     if user_id not in auth_users:
